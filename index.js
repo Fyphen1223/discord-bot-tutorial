@@ -30,13 +30,14 @@ const client = new discord.Client({
     ]
 });
 
+const config = require('./config.json');
+
 client.on('messageCreate'. async msg => {
   if(msg.author.bot) {return};
   if(msg.content === "hello") {
     msg.reply('Hello!');
   }
 });
-
 
 // ! These process are system process!!!
 process.on('uncaughtException', (err) => {
