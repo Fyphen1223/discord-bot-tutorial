@@ -32,7 +32,11 @@ const client = new discord.Client({
 
 const config = require('./config.json');
 
-client.on('messageCreate'. async msg => {
+client.on('ready'. async => {
+    console.log('Ready!');
+});
+
+client.on('messageCreate', async msg => {
   if(msg.author.bot) {return};
   if(msg.content === "hello") {
     msg.reply('Hello!');
